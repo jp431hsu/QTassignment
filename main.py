@@ -49,6 +49,9 @@ class MainWindow(QObject):
         eightButton = self.window.findChild(QPushButton, 'eightButton')
         eightButton.clicked.connect(self.eight_button_clicked)
 
+        nineButton = self.window.findChild(QPushButton, 'nineButton')
+        nineButton.clicked.connect(self.nine_button_clicked)
+
         addButton = self.window.findChild(QPushButton, 'addButton')
         addButton.clicked.connect(self.add_button_clicked)
 
@@ -70,52 +73,52 @@ class MainWindow(QObject):
     def zero_button_clicked(self):
         zeroButton = self.window.findChild(QPushButton, 'zeroButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(zeroButton.text())
+        accumulator.setText(accumulator.text() + zeroButton.text())
 
     def one_button_clicked(self):
         oneButton = self.window.findChild(QPushButton, 'oneButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(oneButton.text())
+        accumulator.setText(accumulator.text() + oneButton.text())
 
     def two_button_clicked(self):
         twoButton = self.window.findChild(QPushButton, 'twoButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(twoButton.text())
+        accumulator.setText(accumulator.text() + twoButton.text())
 
     def three_button_clicked(self):
         threeButton = self.window.findChild(QPushButton, 'threeButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(threeButton.text())
+        accumulator.setText(accumulator.text() + threeButton.text())
 
     def four_button_clicked(self):
         fourButton = self.window.findChild(QPushButton, 'fourButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(fourButton.text())
+        accumulator.setText(accumulator.text() + fourButton.text())
 
     def five_button_clicked(self):
         fiveButton = self.window.findChild(QPushButton, 'fiveButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(fiveButton.text())
+        accumulator.setText(accumulator.text() + fiveButton.text())
 
     def six_button_clicked(self):
         sixButton = self.window.findChild(QPushButton, 'sixButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(sixButton.text())
+        accumulator.setText(accumulator.text() + sixButton.text())
 
     def seven_button_clicked(self):
         sevenButton = self.window.findChild(QPushButton, 'sevenButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(sevenButton.text())
+        accumulator.setText(accumulator.text() + sevenButton.text())
 
     def eight_button_clicked(self):
         eightButton = self.window.findChild(QPushButton, 'eightButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(eightButton.text())   
+        accumulator.setText(accumulator.text() + eightButton.text())   
 
     def nine_button_clicked(self):
         nineButton = self.window.findChild(QPushButton, 'nineButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(nineButton.text())    
+        accumulator.setText(accumulator.text() + nineButton.text())    
 
     def add_button_clicked(self):
         addButton = self.window.findChild(QPushButton, 'addButton')
@@ -125,17 +128,17 @@ class MainWindow(QObject):
     def subtract_button_clicked(self):
         subtractButton = self.window.findChild(QPushButton, 'subtractButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(subtractButton.text())
+        accumulator.setText(accumulator.text() + subtractButton.text())
 
     def divide_button_clicked(self):
         divideButton = self.window.findChild(QPushButton, 'divideButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(divideButton.text())
+        accumulator.setText(accumulator.text() + divideButton.text())
 
     def multiply_button_clicked(self):
         multiplyButton = self.window.findChild(QPushButton, 'multiplyButton')
         accumulator = self.window.findChild(QLineEdit, 'accumulatorText')
-        accumulator.setText(multiplyButton.text())
+        accumulator.setText(accumulator.text() + multiplyButton.text())
 
     def equals_button_clicked(self):
         equalsButton = self.window.findChild(QPushButton, 'equalsButton')
@@ -147,10 +150,10 @@ class MainWindow(QObject):
         elif (arithmetic == '-'):
             answer = int(first) - int(second)
         elif (arithmetic == '*'):
-            answer = int(fist) * int(second)
+            answer = int(first) * int(second)
         else:
             answer = int(first) / int(second)
-        accumulator.setText(total.text())
+        accumulator.setText(answer.text())
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
